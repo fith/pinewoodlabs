@@ -12,7 +12,7 @@ public class SocketIOClient : MonoBehaviour
     private SocketManager manager;
     // Use this for initialization
     void Awake() {
-        this.manager = new SocketManager(new Uri("http://localhost:8000/socket.io/"));
+        this.manager = new SocketManager(new Uri("http://45.79.88.183:8000/socket.io/"));
         this.manager.Open();
     }
     void Start()
