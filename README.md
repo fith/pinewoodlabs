@@ -24,8 +24,9 @@ Being a weekend tech demo there are some allowed impractical aspects to this I'd
 The Socket.IO server is embeded in the React project. In production software you'd want it separate; probably running in Express.
 My attempt at calculating aerodynamic for the player's car currently end up giving it advantage in every race. 
 I moddled and textured everything except for the locker and bench. I configured the Unity renderer to push WebGL for visual fidelity, but it could use some performance tuning.
-Not enough time yet put in to environment config, tests, or documentation.
+Not enough time yet put in to environment config, tests, or documentation. 
 The API payloads are not optimized. In production the geometry and graph data should be sent as updates and diffs.
 UV calculations on the procedural mesh are also still a bit off.
 Can't fault me for honesty.
 # Thanks
+https://www.linkedin.com/in/kevinmmangan/
