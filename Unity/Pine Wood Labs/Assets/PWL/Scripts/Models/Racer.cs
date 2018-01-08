@@ -23,7 +23,6 @@ public class Racer : MonoBehaviour
         this.mesh = ExtrudeShape.Generate(this.points, this.depth);
         this.volume = MeshVolume.Calculate(mesh);
         this.mass = (defaultMass + this.volume * 100.0f);
-        Debug.Log(this.volume);
         return this.mesh;
     }
 

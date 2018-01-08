@@ -25,23 +25,23 @@ public class SocketIOClient : MonoBehaviour
     }
     
     public void On(string socket_event, SocketIOCallback socket_callback) {
-        Debug.Log("Registering: " + socket_event);
+        //Debug.Log("Registering: " + socket_event);
         manager.Socket.On(socket_event, socket_callback);
     }
 
     public void Emit(string socket_event, object args = null) {
-        Debug.Log(socket_event);
+        //Debug.Log(socket_event);
         manager.Socket.Emit(socket_event, args);
     }
 
     void OnServerConnect(Socket socket, Packet packet, params object[] args)
     {
-        Debug.Log("Connected");
+        //Debug.Log("Connected");
     }
 
     void OnServerDisconnect(Socket socket, Packet packet, params object[] args)
     {
-        Debug.Log("Disconnected");
+        //Debug.Log("Disconnected");
     }
 
     void OnError(Socket socket, Packet packet, params object[] args)
