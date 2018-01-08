@@ -29,7 +29,7 @@ class App extends Component {
         </header>
         <Unity
           height={640}
-          src='/Build/pine wood.json'
+          src='/Build/pinewood.json'
           loader='/Build/UnityLoader.js'
         />
         <div className="App-sections">
