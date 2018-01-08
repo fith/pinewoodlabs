@@ -1,8 +1,6 @@
 /**
  * Not a React class. Just a regular ES6 class.
  */
-require('../Models/Racer')
-
 class Server {
     // still going to follow some React patterns
     // for consistency.
@@ -13,7 +11,7 @@ class Server {
     start() {
         this.io.on('connection', (socket) => {
             console.log("New Connection!");
-        
+            
             this.updateCar(socket);
             this.startRace(socket);
             this.endRace(socket);
@@ -27,8 +25,7 @@ class Server {
 
     updateCar(socket) {
         socket.on('updateCar', (data) => {
-            console.log('updateCar:');
-            console.log(data);
+            console.log('updateCar');
             this.io.sockets.emit('updateCar', data);
         });
     }
@@ -50,7 +47,6 @@ class Server {
     sendStats(socket) {
         socket.on('sendStats', (data) => {
             console.log('sendStats');
-            console.log(data);
             this.io.sockets.emit('sendStats', data);
         });
     }

@@ -104,10 +104,22 @@ class Editor extends React.Component {
                 <header>
                     <h1>Design your Pinewood Racecar</h1>
                 </header>
-                <Stage width={this.state.width + (this.state.margin * 2.0)} height={this.state.height + (this.state.margin * 2.0)} onClick={this.handleAddPoint.bind(this)} >
+                <Stage width={this.state.width + (this.state.margin * 2.0)} height={this.state.height + (this.state.margin * 3.0)} onClick={this.handleAddPoint.bind(this)} >
                     <Layer>
+                        <Rect
+                            x={0}
+                            y={0}
+                            width={this.state.width + (this.state.margin * 2.0)}
+                            height={this.state.height + (this.state.margin * 3.0)}
+                            fill="#FFFFFF"
+                        />
                         <Rect cornerRadius={10}
-            strokeWidth={this.props.width} x={this.state.margin} y={this.state.margin} width={this.state.width} height={this.state.height - this.state.wheelOffset} fill="#AAAAAACC" />
+                            x={this.state.margin}
+                            y={this.state.margin}
+                            width={this.state.width}
+                            height={this.state.height - this.state.wheelOffset}
+                            fill="#AAAAAACC"
+                        />
                         <Circle
                             x={this.state.wheel1x + this.state.margin}
                             y={this.state.height + this.state.margin - this.state.wheelOffset}

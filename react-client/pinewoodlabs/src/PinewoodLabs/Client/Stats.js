@@ -28,7 +28,7 @@ class Stats extends React.Component {
                 <LineChart
                     width="700px"
                     height="340px"
-                    colors={["#b00", "#666"]}
+                    colors={["#FF8400", "#FF8400"]}
                     legend={false}
                     xtitle="Time" 
                     ytitle="Speed"

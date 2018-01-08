@@ -41,7 +41,11 @@ class App extends Component {
           </div>
         </div>
         <footer className="App-footer">
+          <p>Kevin Mangan</p>
+          <p>Full-Stack Web and App Developer</p>
+          <p>See this project on <a href="https://github.com/fith/pinewoodlabs">GitHub</a></p>
           Thanks for viewing.
+          <p>©2018</p>
         </footer>
       </div>
     );
