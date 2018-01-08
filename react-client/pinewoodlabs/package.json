@@ -1,0 +1,36 @@
+{
+  "name": "pinewoodlabs",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "canvas": "^1.6.9",
+    "chartkick": "^2.2.4",
+    "highcharts": "^6.0.4",
+    "husky": "^0.14.3",
+    "konva": "^1.7.6",
+    "konva-node": "^0.5.5",
+    "lint-staged": "^6.0.0",
+    "prettier": "^1.9.2",
+    "react": "^16.2.0",
+    "react-chartkick": "^0.1.6",
+    "react-dom": "^16.2.0",
+    "react-konva": "^1.6.4",
+    "react-scripts": "1.0.17",
+    "react-unity-webgl": "^6.4.0",
+    "socket.io": "^2.0.4",
+    "socket.io-client": "^2.0.4"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,json,css}": [
+      "prettier --single-quote --write",
+      "git add"
+    ]
+  },
+  "scripts": {
+    "precommit": "lint-staged",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

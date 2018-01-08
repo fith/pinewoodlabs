@@ -1,0 +1,3 @@
+[submodule "Unity/Pine Wood Labs/Assets/PWL/Scripts/SimpleState"]
+	path = Unity/Pine Wood Labs/Assets/PWL/Scripts/SimpleState
+	url = https://github.com/fith/SimpleState.git
