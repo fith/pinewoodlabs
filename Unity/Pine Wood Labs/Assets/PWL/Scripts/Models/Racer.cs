@@ -13,7 +13,7 @@ public class Racer : MonoBehaviour
     public float defaultMass = 49.0f;
     public float mass = 50.0f;
     private bool gatherStats = false;
-    public float statsInterval = 1.0f;
+    public float statsInterval = 0.1f;
     private float lastStatsTime;
     private float startTime;
 
