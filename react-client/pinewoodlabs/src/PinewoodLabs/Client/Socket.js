@@ -7,7 +7,7 @@ const io = require('socket.io-client');
 
 class Socket {
     constructor(props) {
-        this.socket = io('http://socket.pinewoodlabs.xyz'); // Should be in a config file.
+        this.socket = io('https://socket.pinewoodlabs.xyz'); // Should be in a config file.
         this.socket.on('connection', (socket) => {
             this.token = socket.handshake.query.token;
             this.clientid = socket.clientid;
