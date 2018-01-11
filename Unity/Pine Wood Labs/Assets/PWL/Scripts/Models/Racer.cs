@@ -40,15 +40,19 @@ public class Racer : MonoBehaviour
     public void ResetStats()
     {
         stats = new Dictionary<string, object>();
+        this.startTime = Time.time;
+        this.lastStatsTime = Time.time;
     }
 
     public void GatherStats(bool gather)
     {
-        if (gather) {
+        if (gather)
+        {
             this.gatherStats = true;
-            this.startTime = Time.time;
-            this.lastStatsTime = Time.time;
-        } else {
+            this.ResetStats();
+        }
+        else
+        {
             this.gatherStats = false;
         }
 
