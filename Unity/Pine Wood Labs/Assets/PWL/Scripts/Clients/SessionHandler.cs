@@ -2,10 +2,9 @@
 using System.Runtime.InteropServices;
 using System.Collections.Generic;
 
-
 namespace PWL
 {
-    public class MenuController : MonoBehaviour
+    public class SessionHandler : MonoBehaviour
     {
 
         public string sessionId;
@@ -31,6 +30,6 @@ namespace PWL
 
     public interface ISessionListener
     {
-        void setSessionId();
+        void StartSession();
     }
 }

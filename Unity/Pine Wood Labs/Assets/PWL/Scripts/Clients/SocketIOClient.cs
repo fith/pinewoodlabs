@@ -11,41 +11,28 @@ namespace PWL
     public class SocketIOClient : MonoBehaviour
     {
         private SocketManager manager;
+        private Socket socket;
         // Use this for initialization
-        void Awake()
+        void Connect(string socketName)
         {
-            this.manager = new SocketManager(new Uri("https://socket.pinewoodlabs.xyz/socket.io/"));
-            this.manager.Open();
+            manager = new SocketManager(new Uri("https://socket.pinewoodlabs.xyz/socket.io/"));
+            socket = manager.GetSocket("/" + socketName);
+            InitSocketEvents();
         }
-        void Start()
+
+        void InitSocketEvents()
         {
-            //Socket sockChat = manager.GetSocket("/socket.io"); 
-            //manager.Socket.On(SocketIOEventTypes.Error, (socket, packet, args) => Debug.LogError(string.Format("Error: {0}", args[0].ToString())));
-            this.manager.Socket.On(SocketIOEventTypes.Connect, OnServerConnect);
-            this.manager.Socket.On(SocketIOEventTypes.Disconnect, OnServerDisconnect);
-            this.manager.Socket.On(SocketIOEventTypes.Error, OnError);
+            socket.On(SocketIOEventTypes.Error, OnError);
         }
 
         public void On(string socket_event, SocketIOCallback socket_callback)
         {
-            //Debug.Log("Registering: " + socket_event);
-            manager.Socket.On(socket_event, socket_callback);
+            socket.On(socket_event, socket_callback);
         }
 
         public void Emit(string socket_event, object args = null)
-        {
-            //Debug.Log(socket_event);
-            manager.Socket.Emit(socket_event, args);
-        }
-
-        void OnServerConnect(Socket socket, Packet packet, params object[] args)
-        {
-            //Debug.Log("Connected");
-        }
-
-        void OnServerDisconnect(Socket socket, Packet packet, params object[] args)
-        {
-            //Debug.Log("Disconnected");
+        {   
+            socket.Emit(socket_event, args);
         }
 
         void OnError(Socket socket, Packet packet, params object[] args)

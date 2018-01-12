@@ -7,10 +7,10 @@ using SimpleState;
 
 namespace PWL
 {
-
-    public class Controller : MonoBehaviour
+    public class Controller : MonoBehaviour, ISessionListener
     {
         public SocketIOClient socket;
+        public SessionHandler sessionHandler;
         protected StateMachine sm;
 
         public Camera startCamera;
@@ -21,11 +21,8 @@ namespace PWL
         public List<RaceTrack> raceTracks;
         public List<Racer> raceCars;
 
-        // Use this for initialization
-        void Start()
-        {
+        public void StartSession() {
             this.racer.mesh = this.tableCar.GetComponent<MeshFilter>().mesh;
-            this.UpdateRaceCar();
             this.InitSockets();
             this.InitStateMachine();
         }
@@ -52,8 +49,8 @@ namespace PWL
 
             State table = new State();
             table.name = "table";
-            table.next_states = new List<string>() { "table", "race" }; // Include start to allow it to even start. Need to find a better way to handle that.
-            table.enter = delegate (string previous) { this.ShowTable(); }; // Automatically advance out of start state.
+            table.next_states = new List<string>() { "race" }; 
+            table.enter = delegate (string previous) { this.ShowTable(); }; 
 
             State race = new State();
             race.name = "race";
